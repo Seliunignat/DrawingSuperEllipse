@@ -15,12 +15,13 @@ public class Display extends JPanel
     public Display()
     {
         setBackground(Color.WHITE);
-        ellipseStroke = new BasicStroke(8.0F, 0, 0, 10.0F, (float[])null, 0.0F);
+        ellipseStroke = new BasicStroke(8.0F,   BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND, 10.0F, (float[])null, 0.0F);
         n = 0.5;
     }
 
     public void paintComponent(Graphics g)
     {
+        super.paintComponent(g);
         double a = 200, b = 200;
         int r = 200;
         //n = 4;
@@ -96,5 +97,6 @@ public class Display extends JPanel
 
     public void setN(double n) {
         this.n = n;
+        this.repaint();
     }
 }
